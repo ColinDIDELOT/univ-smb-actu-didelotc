@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Pour positionner le logo par rapport à l'en-tête */
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px; /* Taille du logo */
+            height: auto;
+        }
+        h1 {
+            font-size: 18px; /* Taille du texte */
+            margin-top: 0; /* Supprimer la marge supérieure par défaut */
+            position: relative;
+        }
+        .actualite {
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-left: 50px; /* Décalage vers la droite */
+        }
+        .categorie {
+            display: flex;
+            justify-content: center; /* Centrage horizontal */
+            padding: 20px;
+        }
+        .categorie a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 0 10px; /* Espacement entre les liens */
+        }
+        .categorie a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        .decoration {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -40px; /* Décalage vers la gauche */
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+        }
+        .commentaire-block {
+            background-color: lightgreen;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .commentaire-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .poster-commentaire {
+            background-color: lightgreen;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .poster-commentaire input[type="text"],
+        .poster-commentaire input[type="submit"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            display: block;
+            width: 100%;
+        }
+        .nom-input,
+        .commentaire-input {
+            margin-bottom: 10px;
+        }
+        .envoyer-input {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="/static/logo.png" alt="Logo" class="logo">
+        <h1>
+            <span class="decoration"></span> 
+            <h1>Concerts | Actualités | Actualités Jazz | Actualités Rock | Actualités Electro</h1> 
+        </h1>
+    </div>
+
+    <div class="actualite">
+        <h2>Dernière Actualité</h2>
+    </div>
+
+    <div class="categorie">
+        <a href="/jazz">Jazz</a>
+        <a href="/Rock">Rock</a>
+        <a href="/electro">Electro</a>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+<footer>
+    <div class="commentaire-block">
+        <div class="commentaire-title">Commentaires</div>
+        <div class="comment-count">0 commentaires</div>
+    </div>
+
+    <div class="poster-commentaire">
+        <div class="commentaire-title">Poster un commentaire</div>
+        <form action="#" method="post">
+            <input type="text" name="nom" placeholder="Nom">
+            <input type="text" name="commentaire" placeholder="Mon commentaire">
+            <input type="submit" value="Envoyer" class="envoyer-input">
+        </form>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+h1 {
+    font-size: 20px; /* Taille du texte */
+    position: relative;
+}
+p {
+    font-size: 16px; /* Taille du texte */
+    padding: 30px;
+}
+</style>
+<h1><strong>{{ data.date }}</strong> - {{ data.titre }}</h1>
+<p>{{ data.contenu }}</p>
+{% endblock %}
