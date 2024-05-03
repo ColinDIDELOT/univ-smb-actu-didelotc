@@ -30,16 +30,12 @@ def electro():
         data = json.load(f)
     return render_template('electro.html', data=data)
 
-@app.route("/commentaire", methods=['GET,POST'])
+@app.route("/", methods=['GET,POST'])
 def commentaire():
     if request.method == 'POST':
-        return commentaires()
+        return render_template('commentaire.html')    
     else:
         return render_template('commentaire.html')
-
-def commentaires():
-    return "merci de votre commentaire"
-
 
 if __name__ == '__main__':
     app.run(debug=True)
